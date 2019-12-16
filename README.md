@@ -33,3 +33,6 @@ perl ./bitlinks-to-pinboard.pl YOUR_PINBOARD_API_KEY <bitlinks.json
 
 Omit the output parameter from the bit.ly exporting curl, and pipe its
 output directly to the import script.
+```
+curl -H 'Authorization: Bearer YOUR_GENERIC_ACCESS_TOKEN' https://api-ssl.bitly.com/v4/groups/Bb73ciNTN1t/bitlinks?size=100000 | perl ./bitlinks-to-pinboard.pl YOUR_PINBOARD_API_KEY
+```
