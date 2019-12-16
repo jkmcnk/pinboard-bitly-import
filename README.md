@@ -9,6 +9,8 @@ reporting, much less an extraction, and Perl is not practical at all. Perl is,
 however, one of my many guilty pleasures, so just deal with it despite this
 being the age of Python when it comes to goddamn awful programming languages.
 
+Then again, I might port this to emacs lisp.
+
 ## Export your bit.ly links via the bit.ly API
 
 * Open the bit.ly web app at https://app.bitly.com/
