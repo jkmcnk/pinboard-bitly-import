@@ -14,9 +14,14 @@ being the age of Python when it comes to goddamn awful programming languages.
 * Open the bit.ly web app at https://app.bitly.com/
 * Open the account menu -> profile -> generic access token
 * Enter your password to generate a generic access token, copy it
+* Get your group ID by running
+```
+curl -H 'Authorization: Bearer YOUR_GENERIC_ACCESS_TOKEN' https://api-ssl.bitly.com/v4/groups
+```
+and inspecting the ```guid``` element(s) of the received JSON
 * Run
 ```
-curl -o bitlinks.json -H 'Authorization: Bearer YOUR_GENERIC_ACCESS_TOKEN' https://api-ssl.bitly.com/v4/groups/Bb73ciNTN1t/bitlinks?size=100000
+curl -o bitlinks.json -H 'Authorization: Bearer YOUR_GENERIC_ACCESS_TOKEN' https://api-ssl.bitly.com/v4/groups/YOUR_GROUP_ID/bitlinks?size=100000
 ```
 
 ## Import the exported links to pinboard
@@ -34,5 +39,5 @@ perl ./bitlinks-to-pinboard.pl YOUR_PINBOARD_API_KEY <bitlinks.json
 Omit the output parameter from the bit.ly exporting curl, and pipe its
 output directly to the import script.
 ```
-curl -H 'Authorization: Bearer YOUR_GENERIC_ACCESS_TOKEN' https://api-ssl.bitly.com/v4/groups/Bb73ciNTN1t/bitlinks?size=100000 | perl ./bitlinks-to-pinboard.pl YOUR_PINBOARD_API_KEY
+curl -H 'Authorization: Bearer YOUR_GENERIC_ACCESS_TOKEN' https://api-ssl.bitly.com/v4/groups/YOUR_GROUP_ID/bitlinks?size=100000 | perl ./bitlinks-to-pinboard.pl YOUR_PINBOARD_API_KEY
 ```
