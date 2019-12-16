@@ -28,7 +28,7 @@ curl -o bitlinks.json -H 'Authorization: Bearer YOUR_GENERIC_ACCESS_TOKEN' https
 
 * Open the pinboard web app at https://pinboard.in/
 * Navigate to settings -> password, copy your API token
-* Make sure you have Date, JSON, utf8
+* Make sure you have Date, JSON, utf8 perl modules installed
 * Simply run the here supplied script, feeding it the exported links via stdin
 ```
 perl ./bitlinks-to-pinboard.pl YOUR_PINBOARD_API_KEY <bitlinks.json
